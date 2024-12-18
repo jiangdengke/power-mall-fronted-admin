@@ -8,25 +8,35 @@ function resolve(dir) {
 const port = process.env.port || 8081 // dev port
 
 module.exports = {
-  publicPath: '/',
-  outputDir: 'dist',
-  assetsDir: 'static',
-  lintOnSave: process.env.NODE_ENV === 'development',
-  productionSourceMap: false,
+  publicPath: '/', // 部署应用的基础url
+  outputDir: 'dist', // 构建输出目录
+  assetsDir: 'static', // 静态资源目录
+  lintOnSave: process.env.NODE_ENV === 'development', // 开发过程启用eslint检查
+  productionSourceMap: false, // 不生成source map文件，source map文件是
   // 配置代理转发
   devServer: {
-    port: port,
-    open: true,
-    overlay: {
+    port: port, // 开发服务器端口
+    open: true, // 自动打开浏览器
+    overlay: { // 错误提示配置
       warnings: false,
       errors: true
+    },
+    proxy: {
+      // 当请求路径以 '/api' 开头时，会被代理到目标服务器
+      '/api': {
+        target: 'http://localhost:8080', // 后端服务器地址
+        changeOrigin: true, // 支持跨域
+        pathRewrite: {
+          '^/api': '' // 重写路径，去掉 '/api' 前缀
+        }
+      }
     }
   },
   configureWebpack: {
-    name: '黑马智慧园区',
+    name: 'power-mall后台管理系统', // 项目名称
     resolve: {
       alias: {
-        '@': resolve('src')
+        '@': resolve('src') // 路径别名，可以用@代替src路径
       }
     }
   },
