@@ -2,7 +2,7 @@
   <div class="login_body">
     <div class="bg" />
     <div class="box">
-      <div class="title">智慧园区-登录</div>
+      <div class="title">power-mall后台管理系统-登录</div>
       <el-form ref="form">
         <el-form-item
           label="账号"
