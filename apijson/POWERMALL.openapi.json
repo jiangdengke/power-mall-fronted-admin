@@ -1,0 +1,1735 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "POWERMALL",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [],
+  "paths": {
+    "/api-admin/pms/category": {
+      "get": {
+        "summary": "商品分类列表",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultListTreeLong",
+                  "description": ""
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 0,
+                      "msg": "",
+                      "data": [
+                        {
+                          "": {}
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "apikey-header-power-mall-token": []
+          }
+        ]
+      },
+      "post": {
+        "summary": "新增商品分类",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryForm",
+                "description": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result",
+                  "description": ""
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "msg": "请求成功",
+                      "data": {},
+                      "error": false
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "apikey-header-power-mall-token": []
+          }
+        ]
+      },
+      "delete": {
+        "summary": "删除商品分类",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result",
+                  "description": ""
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "msg": "请求成功",
+                      "data": {},
+                      "error": false
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "apikey-header-power-mall-token": []
+          }
+        ]
+      }
+    },
+    "/api-admin/pms/category/{categoryId}": {
+      "put": {
+        "summary": "更新商品分类",
+        "deprecated": false,
+        "description": "更新商品分类",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": 100,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CategoryForm",
+                "description": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result",
+                  "description": ""
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "msg": "请求成功",
+                      "data": {},
+                      "error": false
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "apikey-header-power-mall-token": []
+          }
+        ]
+      }
+    },
+    "/api-admin/pms/spu/{spuId}": {
+      "get": {
+        "summary": "商品【详情】",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "spuId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultSpuVO",
+                  "description": ""
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 0,
+                      "msg": "",
+                      "data": {
+                        "id": 0,
+                        "name": "",
+                        "categoryName": "",
+                        "categoryId": 0,
+                        "price": 0,
+                        "sales": 0,
+                        "img": "",
+                        "detail": "",
+                        "status": 0,
+                        "imgList": [
+                          ""
+                        ],
+                        "specList": [],
+                        "skuList": [
+                          {
+                            "id": 0,
+                            "spuId": 0,
+                            "name": "",
+                            "price": 0,
+                            "stock": 0,
+                            "specValueList": [],
+                            "status": 0
+                          }
+                        ],
+                        "totalStock": 0
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "apikey-header-power-mall-token": []
+          }
+        ]
+      },
+      "put": {
+        "summary": "商品【更新】",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "spuId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SpuForm",
+                "description": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result",
+                  "description": ""
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "msg": "请求成功",
+                      "data": {},
+                      "error": false
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "apikey-header-power-mall-token": []
+          }
+        ]
+      },
+      "delete": {
+        "summary": "商品【删除】",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "spuId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result",
+                  "description": ""
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "msg": "请求成功",
+                      "data": {},
+                      "error": false
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "apikey-header-power-mall-token": []
+          }
+        ]
+      }
+    },
+    "/api-admin/pms/spu": {
+      "get": {
+        "summary": "商品【分页查询】",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "current",
+            "in": "query",
+            "description": "当前页码",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "每页显示条数",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "商品名称",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "categoryId",
+            "in": "query",
+            "description": "商品分类ID",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "商品状态",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageResultSpuVO",
+                  "description": ""
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 0,
+                      "msg": "",
+                      "data": {
+                        "total": 0,
+                        "records": [
+                          {
+                            "id": 0,
+                            "name": "",
+                            "categoryName": "",
+                            "categoryId": 0,
+                            "price": 0,
+                            "sales": 0,
+                            "img": "",
+                            "detail": "",
+                            "status": 0,
+                            "imgList": [
+                              ""
+                            ],
+                            "specList": [],
+                            "skuList": [
+                              {
+                                "id": 0,
+                                "spuId": 0,
+                                "name": "",
+                                "price": 0,
+                                "stock": 0,
+                                "specValueList": [],
+                                "status": 0
+                              }
+                            ],
+                            "totalStock": 0
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "apikey-header-power-mall-token": []
+          }
+        ]
+      },
+      "post": {
+        "summary": "商品【新增】",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SpuForm",
+                "description": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result",
+                  "description": ""
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "msg": "请求成功",
+                      "data": {},
+                      "error": false
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "apikey-header-power-mall-token": []
+          }
+        ]
+      },
+      "delete": {
+        "summary": "商品【删除】",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "spuId",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result",
+                  "description": ""
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "msg": "请求成功",
+                      "data": {},
+                      "error": false
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "apikey-header-power-mall-token": []
+          }
+        ]
+      }
+    },
+    "/api-admin/oss/minio/upload": {
+      "post": {
+        "summary": "文件【上传】",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "bucket",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result",
+                  "description": ""
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 0,
+                      "msg": "",
+                      "data": {},
+                      "error": false
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "apikey-header-power-mall-token": []
+          }
+        ]
+      }
+    },
+    "/api-admin/oss/minio/remove": {
+      "delete": {
+        "summary": "文件【删除】",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "bucket",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filename",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result",
+                  "description": ""
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "msg": "请求成功",
+                      "data": {},
+                      "error": false
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "apikey-header-power-mall-token": []
+          }
+        ]
+      }
+    },
+    "/api-admin/oss/minio/removeBatch": {
+      "delete": {
+        "summary": "文件【批量删除】",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "bucket",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filenames",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result",
+                  "description": ""
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "msg": "请求成功",
+                      "data": {},
+                      "error": false
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "apikey-header-power-mall-token": []
+          }
+        ]
+      }
+    },
+    "/api-admin/cms/content": {
+      "get": {
+        "summary": "内容【分页】",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "current",
+            "in": "query",
+            "description": "当前页码",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "每页显示条数",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "groupCode",
+            "in": "query",
+            "description": "分组编码",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "title",
+            "in": "query",
+            "description": "内容标题",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PageResultContent",
+                  "description": ""
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 0,
+                      "msg": "",
+                      "data": {
+                        "total": 0,
+                        "records": [
+                          {
+                            "id": 0,
+                            "groupName": "",
+                            "groupCode": "",
+                            "title": "",
+                            "code": "",
+                            "sort": 0,
+                            "img": "",
+                            "redirectUrl": "",
+                            "createTime": "",
+                            "updateTime": ""
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "apikey-header-power-mall-token": []
+          }
+        ]
+      },
+      "post": {
+        "summary": "内容【新增】",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                  "groupName": {
+                    "type": "string",
+                    "description": "分组名称"
+                  },
+                  "groupCode": {
+                    "type": "string",
+                    "description": "分组编码"
+                  },
+                  "title": {
+                    "type": "string",
+                    "description": "内容标题"
+                  },
+                  "code": {
+                    "type": "string",
+                    "description": "内容编码"
+                  },
+                  "sort": {
+                    "type": "integer",
+                    "description": "内容排序"
+                  },
+                  "img": {
+                    "type": "string",
+                    "description": "图片"
+                  },
+                  "redirectUrl": {
+                    "type": "string",
+                    "description": "点击跳转地址"
+                  }
+                },
+                "required": [
+                  "groupName",
+                  "groupCode",
+                  "title",
+                  "sort"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result",
+                  "description": ""
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "msg": "请求成功",
+                      "data": {},
+                      "error": false
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "apikey-header-power-mall-token": []
+          }
+        ]
+      }
+    },
+    "/api-admin/cms/content/{contentId}": {
+      "put": {
+        "summary": "内容【更新】",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "contentId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContentForm",
+                "description": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result",
+                  "description": ""
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "msg": "请求成功",
+                      "data": {},
+                      "error": false
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "apikey-header-power-mall-token": []
+          }
+        ]
+      },
+      "delete": {
+        "summary": "内容【删除】",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "contentId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result",
+                  "description": ""
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "msg": "请求成功",
+                      "data": {},
+                      "error": false
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "apikey-header-power-mall-token": []
+          }
+        ]
+      }
+    },
+    "/api-admin/ums/login": {
+      "get": {
+        "summary": "登录",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SaResult",
+                  "description": ""
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "": {}
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "apikey-header-power-mall-token": []
+          }
+        ]
+      }
+    },
+    "/api-admin/ums/logout": {
+      "get": {
+        "summary": "退出",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SaResult",
+                  "description": ""
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "": {}
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "apikey-header-power-mall-token": []
+          }
+        ]
+      }
+    },
+    "/api-admin/pms/sku": {
+      "post": {
+        "summary": "更新商品状态",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "skuId",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "apikey-header-power-mall-token": []
+          }
+        ]
+      },
+      "put": {
+        "summary": "更新商品状态",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "skuId",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "apikey-header-power-mall-token": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "": {
+        "type": "object",
+        "properties": {}
+      },
+      "SkuVO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "sku_id",
+            "format": "int64"
+          },
+          "spuId": {
+            "type": "integer",
+            "description": "spu_id",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "description": "规格组合的名称"
+          },
+          "price": {
+            "type": "integer",
+            "description": "价格"
+          },
+          "stock": {
+            "type": "integer",
+            "description": "库存"
+          },
+          "specValueList": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {}
+            },
+            "description": "规格值的组合"
+          },
+          "status": {
+            "type": "integer",
+            "description": "商品状态  0:下架 1:上架"
+          }
+        }
+      },
+      "Content": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": ""
+          },
+          "groupName": {
+            "type": "string",
+            "description": "分组名称"
+          },
+          "groupCode": {
+            "type": "string",
+            "description": "分组编码"
+          },
+          "title": {
+            "type": "string",
+            "description": "标题"
+          },
+          "code": {
+            "type": "string",
+            "description": "内容编码"
+          },
+          "sort": {
+            "type": "integer",
+            "description": "内容排序"
+          },
+          "img": {
+            "type": "string",
+            "description": "图片"
+          },
+          "redirectUrl": {
+            "type": "string",
+            "description": "点击跳转地址"
+          },
+          "createTime": {
+            "type": "string",
+            "description": "创建时间"
+          },
+          "updateTime": {
+            "type": "string",
+            "description": "更新时间"
+          }
+        }
+      },
+      "SaResult": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "object",
+            "properties": {}
+          }
+        }
+      },
+      "Result": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "description": "状态码"
+          },
+          "msg": {
+            "type": "string",
+            "description": "响应消息"
+          },
+          "data": {
+            "description": "响应数据",
+            "type": "object",
+            "properties": {}
+          },
+          "error": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ResultListTreeLong": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "description": "状态码"
+          },
+          "msg": {
+            "type": "string",
+            "description": "响应消息"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TreeLong"
+            },
+            "description": "响应数据"
+          }
+        }
+      },
+      "TreeLong": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "$ref": "#/components/schemas/key"
+          }
+        }
+      },
+      "key": {
+        "type": "object",
+        "properties": {}
+      },
+      "SpuVO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "主键",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "description": "商品名称"
+          },
+          "categoryName": {
+            "type": "string",
+            "description": "商品分类名称"
+          },
+          "categoryId": {
+            "type": "integer",
+            "description": "商品分类ID",
+            "format": "int64"
+          },
+          "price": {
+            "type": "integer",
+            "description": "价格"
+          },
+          "sales": {
+            "type": "integer",
+            "description": "销量"
+          },
+          "img": {
+            "type": "string",
+            "description": "商品主图"
+          },
+          "detail": {
+            "type": "string",
+            "description": "商品详情"
+          },
+          "status": {
+            "type": "integer",
+            "description": "商品状态  0:下架 1:上架"
+          },
+          "imgList": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "商品图集"
+          },
+          "specList": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {}
+            },
+            "description": "规格列表"
+          },
+          "skuList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SkuVO",
+              "description": ""
+            },
+            "description": "库存信息"
+          },
+          "totalStock": {
+            "type": "integer",
+            "description": "总库存数量"
+          }
+        }
+      },
+      "CategoryForm": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "主键",
+            "format": "int64"
+          },
+          "parentId": {
+            "type": "integer",
+            "description": "上级分类ID",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "description": "分类名称"
+          },
+          "icon": {
+            "type": "string",
+            "description": "图标"
+          },
+          "weight": {
+            "type": "number",
+            "description": "排序"
+          }
+        },
+        "required": [
+          "parentId",
+          "name",
+          "icon",
+          "weight"
+        ]
+      },
+      "PageDataContent": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer",
+            "description": "满足分页条件的总记录数"
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Content",
+              "description": "网站内容表"
+            },
+            "description": "当前页的记录"
+          }
+        }
+      },
+      "ResultSpuVO": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "description": "状态码"
+          },
+          "msg": {
+            "type": "string",
+            "description": "响应消息"
+          },
+          "data": {
+            "$ref": "#/components/schemas/SpuVO",
+            "description": "响应数据"
+          }
+        }
+      },
+      "PageResultContent": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "description": "状态码"
+          },
+          "msg": {
+            "type": "string",
+            "description": "响应消息"
+          },
+          "data": {
+            "$ref": "#/components/schemas/PageDataContent",
+            "description": "响应数据"
+          }
+        }
+      },
+      "PageDataSpuVO": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer",
+            "description": "满足分页条件的总记录数",
+            "format": "int64"
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SpuVO",
+              "description": "响应数据"
+            },
+            "description": "当前页的记录"
+          }
+        }
+      },
+      "PageResultSpuVO": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "description": "状态码"
+          },
+          "msg": {
+            "type": "string",
+            "description": "响应消息"
+          },
+          "data": {
+            "$ref": "#/components/schemas/PageDataSpuVO",
+            "description": "响应数据"
+          }
+        }
+      },
+      "ContentForm": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": ""
+          },
+          "groupName": {
+            "type": "string",
+            "description": "分组名称"
+          },
+          "groupCode": {
+            "type": "string",
+            "description": "分组编码"
+          },
+          "title": {
+            "type": "string",
+            "description": "内容标题"
+          },
+          "code": {
+            "type": "string",
+            "description": "内容编码"
+          },
+          "sort": {
+            "type": "integer",
+            "description": "内容排序"
+          },
+          "img": {
+            "type": "string",
+            "description": "图片"
+          },
+          "redirectUrl": {
+            "type": "string",
+            "description": "点击跳转地址"
+          }
+        },
+        "required": [
+          "groupName",
+          "groupCode",
+          "title",
+          "sort"
+        ]
+      },
+      "SkuForm": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "",
+            "format": "int64"
+          },
+          "spuId": {
+            "type": "integer",
+            "description": "SPU ID",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "description": "商品名称"
+          },
+          "price": {
+            "type": "integer",
+            "description": "商品价格"
+          },
+          "stock": {
+            "type": "integer",
+            "description": "库存数量"
+          },
+          "specValueList": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {}
+            },
+            "description": "商品规格值"
+          },
+          "status": {
+            "type": "integer",
+            "description": "状态：0.下架 1.上架"
+          }
+        }
+      },
+      "SpuForm": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "主键",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "description": "商品名称"
+          },
+          "categoryId": {
+            "type": "integer",
+            "description": "商品分类ID",
+            "format": "int64"
+          },
+          "price": {
+            "type": "integer",
+            "description": "价格"
+          },
+          "sales": {
+            "type": "integer",
+            "description": "销量"
+          },
+          "img": {
+            "type": "string",
+            "description": "商品主图"
+          },
+          "imgList": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "商品图集"
+          },
+          "detail": {
+            "type": "string",
+            "description": "商品详情"
+          },
+          "status": {
+            "type": "integer",
+            "description": "商品状态  0:下架 1:上架"
+          },
+          "specList": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {}
+            },
+            "description": "商品规格"
+          },
+          "skuList": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SkuForm",
+              "description": ""
+            },
+            "description": "商品库存"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "apikey-header-power-mall-token": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "power-mall-token"
+      }
+    }
+  },
+  "servers": []
+}

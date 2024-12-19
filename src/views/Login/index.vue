@@ -43,7 +43,7 @@
       <el-checkbox v-model="loginForm.remember">记住我</el-checkbox>
 
       <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">
-        {{ loading ? '登录中...' : '登录' }}
+        登录
       </el-button>
     </el-form>
   </div>
@@ -131,8 +131,7 @@ export default {
 .login-container {
   min-height: 100vh;
   width: 100%;
-  background: url('~@/assets/login-bg-anime.svg') no-repeat center center fixed;
-  background-size: cover;
+  background: linear-gradient(135deg, #8b9fff 0%, #6b85ff 100%);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -144,29 +143,27 @@ export default {
     max-width: 100%;
     padding: 40px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
   }
 
   .title-container {
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 
     .title {
-      font-size: 28px;
+      font-size: 24px;
       color: #409EFF;
       margin: 0 auto;
       text-align: center;
-      font-weight: bold;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      font-weight: normal;
     }
   }
 
   .svg-container {
     padding: 6px 5px 6px 15px;
-    color: #409EFF;
+    color: #909399;
     vertical-align: middle;
     width: 30px;
     display: inline-block;
@@ -177,40 +174,58 @@ export default {
     right: 10px;
     top: 7px;
     font-size: 16px;
-    color: #409EFF;
+    color: #909399;
     cursor: pointer;
     user-select: none;
   }
 
   .el-input {
     display: inline-block;
-    height: 47px;
+    height: 40px;
     width: 85%;
 
     input {
-      background: transparent;
+      background: #fafafa;
       border: 0;
       -webkit-appearance: none;
-      border-radius: 0;
+      border-radius: 4px;
       padding: 12px 5px 12px 15px;
-      height: 47px;
-      caret-color: #409EFF;
+      height: 40px;
+      color: #606266;
 
       &:-webkit-autofill {
-        box-shadow: 0 0 0 1000px transparent inset !important;
-        -webkit-text-fill-color: #409EFF !important;
+        box-shadow: 0 0 0 1000px #fafafa inset !important;
+        -webkit-text-fill-color: #606266 !important;
       }
     }
   }
 
   .el-form-item {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 5px;
-    color: #454545;
+    border: 1px solid #DCDFE6;
+    background: #fafafa;
+    border-radius: 4px;
+    margin-bottom: 20px;
 
     &:hover {
       border-color: #409EFF;
+    }
+  }
+
+  .el-checkbox {
+    margin-bottom: 20px;
+    color: #606266;
+  }
+
+  .el-button--primary {
+    height: 40px;
+    font-size: 16px;
+    background: #409EFF;
+    border: none;
+    border-radius: 4px;
+    margin-top: 10px;
+
+    &:hover, &:focus {
+      background: #66b1ff;
     }
   }
 }

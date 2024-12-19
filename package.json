@@ -13,6 +13,7 @@
     "core-js": "^3.30.0",
     "element-ui": "^2.15.13",
     "normalize.css": "7.0.0",
+    "nprogress": "^0.2.0",
     "path-to-regexp": "2.4.0",
     "vue": "2.6.10",
     "vue-router": "^3.6.5",

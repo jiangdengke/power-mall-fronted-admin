@@ -105,7 +105,7 @@ export default {
       color: #409EFF;
       text-decoration: none;
       transition: all 0.3s;
-      
+
       &:hover {
         background: rgba(64, 158, 255, 0.2);
       }
@@ -122,7 +122,7 @@ export default {
 
     .avatar-container {
       cursor: pointer;
-      
+
       .avatar-wrapper {
         display: flex;
         align-items: center;

@@ -15,9 +15,9 @@ module.exports = {
   productionSourceMap: false, // 不生成source map文件，source map文件是
   // 配置代理转发
   devServer: {
-    port: 8083, // 开发服务器端口
-    open: false, // 自动打开浏览器
-    overlay: { // 错误提示配置
+    port: 9528,
+    open: true,
+    overlay: {
       warnings: false,
       errors: true
     },

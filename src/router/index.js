@@ -23,26 +23,15 @@ export const routes = [
     children: [
       {
         path: '',
+        name: 'ProductList',
         component: () => import('@/views/Product/List/index'),
         meta: { title: '商品管理', icon: 'el-icon-goods' }
       },
       {
-        path: 'add',
+        path: 'form/:id?',
+        name: 'ProductForm',
         component: () => import('@/views/Product/Form/index'),
-        meta: { title: '添加商品' },
-        hidden: true
-      },
-      {
-        path: 'edit/:id',
-        component: () => import('@/views/Product/Form/index'),
-        meta: { title: '编辑商品' },
-        hidden: true
-      },
-      {
-        path: 'sku/edit/:id',
-        component: () => import('@/views/Product/Form/SkuForm'),
-        name: 'SkuEdit',
-        meta: { title: '编辑商品规格', activeMenu: '/product/list' },
+        meta: { title: '商品编辑' },
         hidden: true
       }
     ]
@@ -57,27 +46,22 @@ export const routes = [
     }]
   },
   {
+    path: '/content',
+    component: Layout,
+    children: [{
+      path: '',
+      component: () => import('@/views/Content/index'),
+      name: 'Content',
+      meta: { title: '内容管理', icon: 'el-icon-document' }
+    }]
+  },
+  {
     path: '/404',
     component: () => import('@/views/404'),
     hidden: true
   },
   // 将匹配所有路径
-  { path: '*', redirect: '/404', hidden: true },
-  {
-    path: '/content',
-    component: Layout,
-    redirect: '/content/list',
-    name: 'Content',
-    meta: { title: '内容管理', icon: 'el-icon-picture' },
-    children: [
-      {
-        path: 'list',
-        name: 'ContentList',
-        component: () => import('@/views/Content/List'),
-        meta: { title: '内容列表' }
-      }
-    ]
-  }
+  { path: '*', redirect: '/404', hidden: true }
 ]
 
 const createRouter = () => new Router({
