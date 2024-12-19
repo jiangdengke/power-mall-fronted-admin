@@ -14,6 +14,9 @@ import router from './router'
 // 注册svg
 import '@/icons'
 
+// 路由权限控制
+import './permission'
+
 Vue.use(ElementUI)
 
 Vue.config.productionTip = false

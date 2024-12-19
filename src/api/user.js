@@ -1,15 +1,15 @@
 import request from '@/utils/request'
 
-// 登录函数
+// 登录接口
 /**
  * @description: 登录函数
  * @param {*} data { mobile,password}
  * @return {*} promise
  */
-export function loginAPI(data) {
+export function loginAPI(params) {
   return request({
-    url: '/park/login',
-    method: 'POST',
-    data
+    url: '/ums/login',
+    method: 'get',
+    params
   })
 }

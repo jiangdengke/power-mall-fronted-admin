@@ -9,12 +9,9 @@
       </div>
       <div class="bullshit">
         <div class="bullshit__oops">OOPS!</div>
-        <div class="bullshit__info">All rights reserved
-          <a style="color:#20a0ff" href="https://wallstreetcn.com" target="_blank">wallstreetcn</a>
-        </div>
         <div class="bullshit__headline">{{ message }}</div>
-        <div class="bullshit__info">Please check that the URL you entered is correct, or click the button below to return to the homepage.</div>
-        <a href="" class="bullshit__return-home">Back to home</a>
+        <div class="bullshit__info">请检查您输入的网址是否正确，或点击下面的按钮返回首页。</div>
+        <el-button type="primary" class="bullshit__return-home" @click="goHome">返回首页</el-button>
       </div>
     </div>
   </div>
@@ -26,7 +23,12 @@ export default {
   name: 'Page404',
   computed: {
     message() {
-      return 'The webmaster said that you can not enter this page...'
+      return '抱歉，您访问的页面不存在...'
+    }
+  },
+  methods: {
+    goHome() {
+      this.$router.push('/')
     }
   }
 }
@@ -181,7 +183,7 @@ export default {
       margin-bottom: 10px;
       animation-name: slideUp;
       animation-duration: 0.5s;
-      animation-delay: 0.1s;
+      animation-delay: 0.2s;
       animation-fill-mode: forwards;
     }
     &__info {
@@ -192,25 +194,19 @@ export default {
       margin-bottom: 30px;
       animation-name: slideUp;
       animation-duration: 0.5s;
-      animation-delay: 0.2s;
+      animation-delay: 0.4s;
       animation-fill-mode: forwards;
     }
     &__return-home {
       display: block;
-      float: left;
+      margin: 20px auto 0;
       width: 110px;
       height: 36px;
-      background: #1482f0;
-      border-radius: 100px;
-      text-align: center;
-      color: #ffffff;
-      opacity: 0;
       font-size: 14px;
-      line-height: 36px;
-      cursor: pointer;
+      opacity: 0;
       animation-name: slideUp;
       animation-duration: 0.5s;
-      animation-delay: 0.3s;
+      animation-delay: 0.6s;
       animation-fill-mode: forwards;
     }
     @keyframes slideUp {

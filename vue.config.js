@@ -5,7 +5,7 @@ function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
-const port = process.env.port || 8081 // dev port
+const port = process.env.port || 8083 // dev port
 
 module.exports = {
   publicPath: '/', // 部署应用的基础url
@@ -15,19 +15,22 @@ module.exports = {
   productionSourceMap: false, // 不生成source map文件，source map文件是
   // 配置代理转发
   devServer: {
-    port: port, // 开发服务器端口
-    open: true, // 自动打开浏览器
+    port: 8083, // 开发服务器端口
+    open: false, // 自动打开浏览器
     overlay: { // 错误提示配置
       warnings: false,
       errors: true
     },
     proxy: {
-      // 当请求路径以 '/api' 开头时，会被代理到目标服务器
-      '/api': {
-        target: 'http://localhost:8080', // 后端服务器地址
+      // 当请求路径以 '/api-admin' 开头时，会被代理到目标服务器
+      '/api-admin': {
+        target: 'http://localhost:8888', // 后端服务器地址
+        onProxyReq(proxyReq) {
+          proxyReq.removeHeader('origin') // 移除请求头中的 origin 字段
+        },
         changeOrigin: true, // 支持跨域
         pathRewrite: {
-          '^/api': '' // 重写路径，去掉 '/api' 前缀
+          '^/api-admin': '/api-admin' // 保持原路径
         }
       }
     }
